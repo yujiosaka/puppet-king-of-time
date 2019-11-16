@@ -38,6 +38,8 @@ const PuppetKOT = require('puppet-king-of-time');
 
 * [class: PuppetKOT](#class-puppetkot)
   * [PuppetKOT.launch([options])](#puppetkotlaunchoptions)
+  * [puppetKOT.clockIn()](#puppetkotclockin)
+  * [puppetKOT.clockOut()](#puppetkotclockout)
   * [puppetKOT.close()](#puppetkotclose)
 
 ## class: PuppetKOT
