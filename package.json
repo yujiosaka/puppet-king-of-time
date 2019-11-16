@@ -1,0 +1,40 @@
+{
+  "name": "puppet-king-of-time",
+  "version": "1.0.0",
+  "description": "Have KING OF TIME (www.kingtime.jp) like a puppet on a string",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --quiet -f codeframe . || eslint .",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yujiosaka/puppet-king-of-time.git"
+  },
+  "keywords": [
+    "king",
+    "of",
+    "time",
+    "puppeteer",
+    "headless",
+    "chrome"
+  ],
+  "author": "Yuji Isobe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yujiosaka/puppet-king-of-time/issues"
+  },
+  "homepage": "https://github.com/yujiosaka/puppet-king-of-time#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "lodash": "4.17.15",
+    "puppeteer": "2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "6.6.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-plugin-import": "2.18.2"
+  }
+}
