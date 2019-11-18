@@ -65,6 +65,10 @@ const PuppetKOT = require('puppet-king-of-time');
   * `loginSelector` <[string]> Login button's selector, default to `.btn-control-message`.
   * `clockInSelector` <[string]> Clock in button's selector, default to `.record-clock-in`.
   * `clockOutSelector` <[string]> Clock out button's selector, default to `.record-clock-out`.
+  * `notificationSelector` <[string]> Notification selector, default to `#notification_content`.
+  * `clockInNotificationContent` <[string]> Notification content after clock in, default to `出勤が完了しました。`.
+  * `clockOutNotificationContent` <[string]> Notification content after clock out, default to `退勤が完了しました。`.
+  * `timeout` <[number]> Maximum wait time in milliseconds, default to `10000`,
   * `id` <[string]> **required**
   * `password` <[string]> **required**
 * returns: <[Promise]<[PuppetKOT]>> Promise which resolves to PuppetKOT instance.
@@ -116,4 +120,5 @@ docker run -i --rm --cap-add=SYS_ADMIN \
 [Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object "Object"
 [Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise "Promise"
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type "String"
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type "Number"
 [PuppetKOT]: #class-puppetkot "PuppetKOT"
