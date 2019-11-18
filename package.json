@@ -1,6 +1,6 @@
 {
   "name": "puppet-king-of-time",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Have KING OF TIME (www.kingtime.jp) like a puppet on a string",
   "main": "index.js",
   "scripts": {
