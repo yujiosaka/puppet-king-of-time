@@ -22,4 +22,5 @@ jobs:
       - run: npx prettier **/*.{md,ts,json} --check
       - run: npx semantic-release
         env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
