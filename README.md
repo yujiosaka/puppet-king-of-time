@@ -1,4 +1,5 @@
 # puppet-king-of-time
+
 Have [KING OF TIME](https://www.kingtime.jp) like a puppet on a string
 
 ## Features
@@ -18,11 +19,11 @@ npm i puppet-king-of-time
 ### Usage
 
 ```js
-const PuppetKOT = require('puppet-king-of-time');
+import PuppetKOT from "puppet-king-of-time";
 
 (async () => {
   // Launch the puppet-king-of-time with your ID/password
-  const puppetKOT = await PuppetKOT.launch({ id: 'Your ID', password: 'Your password' });
+  const puppetKOT = await PuppetKOT.launch({ id: "Your ID", password: "Your password" });
   // Clock in
   await puppetKOT.clockIn();
   // Clock out
@@ -36,21 +37,21 @@ const PuppetKOT = require('puppet-king-of-time');
 
 ### Table of Contents
 
-* [class: PuppetKOT](#class-puppetkot)
-  * [PuppetKOT.launch([options])](#puppetkotlaunchoptions)
-  * [puppetKOT.clockIn()](#puppetkotclockin)
-  * [puppetKOT.clockOut()](#puppetkotclockout)
-  * [puppetKOT.close()](#puppetkotclose)
+- [class: PuppetKOT](#class-puppetkot)
+  - [PuppetKOT.launch([options])](#puppetkotlaunchoptions)
+  - [puppetKOT.clockIn()](#puppetkotclockin)
+  - [puppetKOT.clockOut()](#puppetkotclockout)
+  - [puppetKOT.close()](#puppetkotclose)
 
 ## class: PuppetKOT
 
 PuppetKOT provides methods to launch a Chromium instance.
 
 ```js
-const PuppetKOT = require('puppet-king-of-time');
+import PuppetKOT from "puppet-king-of-time";
 
 (async () => {
-  const puppetKOT = await PuppetKOT.launch({ id: 'Your ID', password: 'Your password' });
+  const puppetKOT = await PuppetKOT.launch({ id: "Your ID", password: "Your password" });
   await puppetKOT.clockIn();
   await puppetKOT.close();
 })();
@@ -58,21 +59,21 @@ const PuppetKOT = require('puppet-king-of-time');
 
 ### PuppetKOT.launch([options])
 
-* `options` <[Object]>
-  * `loginUrl` <[string]> Login url to [KING OF TIME](https://www.kingtime.jp)'s recorder, default to `https://s2.kingtime.jp/independent/recorder/personal/`.
-  * `idSelector` <[string]> Login ID input's selector, default to `#id`.
-  * `passwordSelector` <[string]> Login password input's selector, default to `#password`.
-  * `loginSelector` <[string]> Login button's selector, default to `.btn-control-message`.
-  * `clockInSelector` <[string]> Clock in button's selector, default to `.record-clock-in`.
-  * `clockOutSelector` <[string]> Clock out button's selector, default to `.record-clock-out`.
-  * `notificationSelector` <[string]> Notification selector, default to `#notification_wrapper[style="display: none;"]`.
-  * `loginNotificationContent` <[string]> Notification content after clock in, default to `データを取得しました`.
-  * `clockInNotificationContent` <[string]> Notification content after clock in, default to `出勤が完了しました`.
-  * `clockOutNotificationContent` <[string]> Notification content after clock out, default to `退勤が完了しました`.
-  * `timeout` <[number]> Maximum wait time in milliseconds, default to `10000`,
-  * `id` <[string]> **required**
-  * `password` <[string]> **required**
-* returns: <[Promise]<[PuppetKOT]>> Promise which resolves to PuppetKOT instance.
+- `options` <[Object]>
+  - `loginUrl` <[string]> Login url to [KING OF TIME](https://www.kingtime.jp)'s recorder, default to `https://s2.kingtime.jp/independent/recorder/personal/`.
+  - `idSelector` <[string]> Login ID input's selector, default to `#id`.
+  - `passwordSelector` <[string]> Login password input's selector, default to `#password`.
+  - `loginSelector` <[string]> Login button's selector, default to `.btn-control-message`.
+  - `clockInSelector` <[string]> Clock in button's selector, default to `.record-clock-in`.
+  - `clockOutSelector` <[string]> Clock out button's selector, default to `.record-clock-out`.
+  - `notificationSelector` <[string]> Notification selector, default to `#notification_wrapper[style="display: none;"]`.
+  - `loginNotificationContent` <[string]> Notification content after clock in, default to `データを取得しました`.
+  - `clockInNotificationContent` <[string]> Notification content after clock in, default to `出勤が完了しました`.
+  - `clockOutNotificationContent` <[string]> Notification content after clock out, default to `退勤が完了しました`.
+  - `timeout` <[number]> Maximum wait time in milliseconds, default to `10000`,
+  - `id` <[string]> **required**
+  - `password` <[string]> **required**
+- returns: <[Promise]<[PuppetKOT]>> Promise which resolves to PuppetKOT instance.
 
 The method launches a Chromium instance. The following options are passed to [puppeteer.launch()](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions).
 
@@ -82,15 +83,15 @@ ignoreHTTPSErrors, headless, executablePath, slowMo, args, ignoreDefaultArgs, ha
 
 ### puppetKOT.clockIn()
 
-* returns: <[Promise]> Promise resolved when clock in button is clicked.
+- returns: <[Promise]> Promise resolved when clock in button is clicked.
 
 ### puppetKOT.clockOut()
 
-* returns: <[Promise]> Promise resolved when clock out button is clicked.
+- returns: <[Promise]> Promise resolved when clock out button is clicked.
 
 ### puppetKOT.close()
 
-* returns: <[Promise]> Promise resolved when the browser is closed.
+- returns: <[Promise]> Promise resolved when the browser is closed.
 
 ## Debugging tips
 
@@ -99,7 +100,7 @@ ignoreHTTPSErrors, headless, executablePath, slowMo, args, ignoreDefaultArgs, ha
 [PuppetKOT.launch()](#puppetkotlaunchoptions)'s options are passed to [puppeteer.launch()](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions). It may be useful to set the `headless` and `slowMo` options so that you can see what is going on.
 
 ```js
-PuppetKOT.launch({ id: 'Your ID', password: 'Your password', headless: false, slowMo: 10 });
+PuppetKOT.launch({ id: "Your ID", password: "Your password", headless: false, slowMo: 10 });
 ```
 
 ### Launch in Docker
