@@ -26,7 +26,9 @@ export default class PuppetKingOfTime {
 
   static async launch(options: PuppetKingOfTimeOptions) {
     if (!options.id || !options.password) throw new Error("ID and Password should be passed");
-    const browser = await Puppeteer.launch(pick(options, PUPPETEER_LAUNCH_OPTIONS));
+    const launchOpts = pick(options, PUPPETEER_LAUNCH_OPTIONS);
+    launchOpts.args = ['--no-sandbox']
+    const browser = await Puppeteer.launch(launchOpts);
     const page = await browser.newPage();
     const puppetKingOfTimeOptions = omit(options, PUPPETEER_LAUNCH_OPTIONS) as PuppetKingOfTimeOptions;
     const puppetKingOfTime = new PuppetKingOfTime(browser, page, puppetKingOfTimeOptions);
